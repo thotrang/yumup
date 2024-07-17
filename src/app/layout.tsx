@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // import { Manrope } from "next/font/google";
 import "./globals.css";
+import "aos/dist/aos.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
+      <body className="min-w-[375px]">
         <div>
           <Header />
           <div className="min-h-base150">{children}</div>

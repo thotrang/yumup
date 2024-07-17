@@ -1,61 +1,14 @@
-"use client";
-
 import BaseText from "@/components/BaseText";
-import VideoImage from "@/public/images/div.png";
-import AvatarChannel from "@/public/images/Avatar-channel.png";
 import BaseWrapperLayout from "@/components/BaseWrapperLayout";
 import StartChannel from "@/public/icons/StartChannel";
-import ChannelCard from "@/components/our-channel/ChannelCard";
-import { twJoin } from "tailwind-merge";
-import { useWindowSize } from "@/hooks/useWindowSize";
-import SliderChannel from "@/components/our-channel/SlideChannel";
+import { IChannel } from "@/types/channel";
+import ListChannel from "@/components/our-channel/ListChannel";
 
-export default function InfomationOurChannel() {
-  const listChannel = [
-    {
-      video: VideoImage,
-      title: "Channel 1",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet libero et odio.",
-      avatar: AvatarChannel,
-    },
-    {
-      video: VideoImage,
-      title: "Channel 2",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet libero et odio.",
-      avatar: AvatarChannel,
-    },
-    {
-      video: VideoImage,
-      title: "Channel 3",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet libero et odio.",
-      avatar: AvatarChannel,
-    },
-    {
-      video: VideoImage,
-      title: "Channel 4",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet libero et odio.",
-      avatar: AvatarChannel,
-    },
-    {
-      video: VideoImage,
-      title: "Channel 5",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet libero et odio.",
-      avatar: AvatarChannel,
-    },
-    {
-      video: VideoImage,
-      title: "Channel 6",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet libero et odio.",
-      avatar: AvatarChannel,
-    },
-  ];
-  const { width } = useWindowSize();
+export default function InfomationOurChannel({
+  channels,
+}: {
+  channels: IChannel[];
+}) {
   return (
     <div className="sm:py-16 py-9">
       <BaseWrapperLayout>
@@ -81,17 +34,7 @@ export default function InfomationOurChannel() {
           </div>
         </div>
       </BaseWrapperLayout>
-      {width >= 640 ? (
-        <BaseWrapperLayout>
-          <div className={twJoin("grid lg:grid-cols-3 grid-cols-2 gap-8", "")}>
-            {listChannel.map((item, index) => {
-              return <ChannelCard item={item} key={index} />;
-            })}
-          </div>
-        </BaseWrapperLayout>
-      ) : (
-        <SliderChannel items={listChannel} />
-      )}
+      <ListChannel channels={channels} />
     </div>
   );
 }

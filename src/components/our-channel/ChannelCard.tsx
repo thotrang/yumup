@@ -1,26 +1,51 @@
+import { IChannel } from "@/types/channel";
 import BaseImage from "../BaseImage";
 import BaseText from "../BaseText";
+import BaseVideo from "../BaseVideo";
+import { get } from "lodash-es";
 
-export default function ChannelCard({ item }: any) {
+export default function ChannelCard({ item }: { item: IChannel }) {
+  const avatar = get(item, "attributes.avatar.data.attributes.url", "");
+  const video =
+    get(
+      item,
+      "attributes.thumbnail.data.attributes.formats.thumbnail.url",
+      null
+    ) ?? get(item, "attributes.thumbnail.data.attributes.url", "");
+  const isImg = [".jpg", ".png"].includes(
+    get(item, "attributes.thumbnail.data.attributes.ext", "")
+  );
   return (
     <div>
-      <BaseImage src={item.video} alt="" className="w-full h-auto" />
+      {isImg ? (
+        <BaseImage src={video} alt="" className="w-full h-auto aspect-video" />
+      ) : (
+        <BaseVideo
+          className="w-full aspect-video h-auto"
+          autoPlay
+          muted
+          loop
+          src={video}
+          link={item.attributes.link ?? ""}
+        />
+      )}
+
       <div className="py-5 flex gap-3 flex-row">
         <div className="flex-none">
           <BaseImage
-            src={item.avatar}
+            src={avatar}
             alt=""
-            className="w-[68px] aspect-square rounded-full"
+            className="w-[68px] aspect-square rounded-full object-cover"
           />
         </div>
         <div className="flex-initial">
           <BaseText
             className="text-l font-semibold pb-1"
-            content={item.title}
+            content={item.attributes.name}
           />
           <BaseText
-            className="text-xm font-normal text-t-shadow line-clamp-3"
-            content={item.description}
+            className="!text-xm font-normal text-t-shadow line-clamp-3"
+            content={item.attributes.shortDescription}
           />
         </div>
       </div>

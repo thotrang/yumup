@@ -1,15 +1,14 @@
-import BaseImage from "@/components/BaseImage";
-import InfomationHeadlines from "@/modules/InfomationHeadlines";
-import InfomationOurChannel from "@/modules/InfomationOurChannel";
-import InfomationStatistic from "@/modules/InfomationStatistic";
-import Banner from "@/public/images/banner.png";
-export default function Home() {
+import { getSettingHome } from "@/apis";
+import HomeSection from "@/modules/HomeSection";
+import { ISection } from "@/types";
+
+export default async function Home() {
+  const res = await getSettingHome();
   return (
     <div className="w-full">
-      <BaseImage src={Banner} alt="" />
-      <InfomationStatistic />
-      <InfomationOurChannel />
-      <InfomationHeadlines />
+      {res?.data?.map((section: ISection, index: number) => {
+        return <HomeSection section={section} key={index} />;
+      })}
     </div>
   );
 }

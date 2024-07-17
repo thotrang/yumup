@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, InputHTMLAttributes } from "react";
-import { twJoin, twMerge } from "tailwind-merge";
+import { twJoin } from "tailwind-merge";
 
 interface IBaseInput
   extends DetailedHTMLProps<
@@ -9,6 +9,7 @@ interface IBaseInput
   register?: any;
   className?: string;
   type?: "input" | "textarea";
+  typeInput?: string;
 }
 export default function BaseInput({
   placeholder,
@@ -18,6 +19,7 @@ export default function BaseInput({
   register,
   className,
   type = "input",
+  typeInput = "text",
 }: IBaseInput) {
   return (
     <div className={className}>
@@ -28,7 +30,7 @@ export default function BaseInput({
             "border border-solid border-[#111113]/20 rounded-md"
           )}
           value={value}
-          type="text"
+          type={typeInput}
           name={name}
           placeholder={placeholder}
           onChange={onChange}
@@ -37,7 +39,7 @@ export default function BaseInput({
       ) : (
         <textarea
           className={twJoin(
-            "py-3 px-4 text-m w-[-webkit-fill-available] h-[60px]",
+            "py-3 px-4 !text-m w-[-webkit-fill-available] h-[60px]",
             "border border-solid border-[#111113]/20 rounded-md"
           )}
           value={value}

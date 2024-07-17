@@ -13,5 +13,5 @@ export default function useOutSideClick(callback: any, ref: any) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [callback, ref]);
 }

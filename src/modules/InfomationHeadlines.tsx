@@ -4,27 +4,16 @@ import BaseButtonViewmore from "@/components/BaseButtonViewmore";
 import BaseText from "@/components/BaseText";
 import BaseWrapperLayout from "@/components/BaseWrapperLayout";
 import HeadlineCard from "@/components/headline/HeadlineCard";
-import Headline from "@/public/images/headline.jpeg";
+import { IHeadline } from "@/types/headline";
+import { ERouter } from "@/types/navigate";
+import { useRouter } from "next/navigation";
 
-export default function InfomationHeadlines() {
-  const headlines = [
-    {
-      image: Headline,
-      title: "3 Low-Cost Campaigns You Must Run to Win BFCM",
-    },
-    {
-      image: Headline,
-      title: "3 Low-Cost Campaigns You Must Run to Win BFCM",
-    },
-    {
-      image: Headline,
-      title: "3 Low-Cost Campaigns You Must Run to Win BFCM",
-    },
-    {
-      image: Headline,
-      title: "3 Low-Cost Campaigns You Must Run to Win BFCM",
-    },
-  ];
+export default function InfomationHeadlines({
+  headlines,
+}: {
+  headlines: IHeadline[];
+}) {
+  const router = useRouter();
   return (
     <BaseWrapperLayout isBackground className="py-4 max-sm:pt-0">
       <BaseText
@@ -39,7 +28,11 @@ export default function InfomationHeadlines() {
         ))}
       </div>
       <div className="text-center py-8">
-        <BaseButtonViewmore onClick={() => {}}></BaseButtonViewmore>
+        <BaseButtonViewmore
+          onClick={() => {
+            router.push(ERouter.HEADLINES);
+          }}
+        ></BaseButtonViewmore>
       </div>
     </BaseWrapperLayout>
   );

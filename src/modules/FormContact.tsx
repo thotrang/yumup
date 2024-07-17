@@ -1,5 +1,6 @@
 "use client";
 
+import { apiUrl } from "@/apis";
 import BaseButton from "@/components/BaseButton";
 import BaseInput from "@/components/BaseInput";
 import BaseText from "@/components/BaseText";
@@ -13,8 +14,17 @@ export default function FormContact() {
     formState: { errors },
     reset,
   } = formMethods;
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
     console.log(data);
+    
+    const response = await fetch(apiUrl + "contacts", {
+      method: "POST",
+      body: data,
+    });
+    console.log(response);
+    if (response.ok) {
+      reset();
+    }
   };
   return (
     <div className="w-full h-full">
@@ -57,9 +67,7 @@ export default function FormContact() {
           <BaseInput
             id="address"
             register={{
-              ...register("address", {
-                required: "Vui lòng nhập tên của bạn",
-              }),
+              ...register("address"),
             }}
             placeholder="Address"
             className=""
@@ -75,6 +83,7 @@ export default function FormContact() {
             }}
             placeholder="Phone"
             className=""
+            typeInput="number"
           ></BaseInput>
           {errors.phone && (
             <BaseText className="absolute !text-error text-xs pt-1">
@@ -86,9 +95,7 @@ export default function FormContact() {
           <BaseInput
             id="message"
             register={{
-              ...register("message", {
-                required: "Vui lòng nhập tên của bạn",
-              }),
+              ...register("message"),
             }}
             type="textarea"
             placeholder="Message"

@@ -37,7 +37,7 @@ export default function BaseButtonViewmore({
       className={twMerge(
         "bg-white border-2 font-medium text-l border-solid border-b_primary rounded-full py-5 px-10"
       )}
-      //   onClick={onClick}
+        onClick={onClick}
       {...props}
     >
       View more

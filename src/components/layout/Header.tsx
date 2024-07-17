@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import useOutSideClick from "@/hooks/useOutSideClick";
 import { twJoin, twMerge } from "tailwind-merge";
+import useAos from "@/hooks/useAos";
 
 export default function Header() {
   const itemRoutes = [
@@ -50,8 +51,10 @@ export default function Header() {
     },
   };
 
+  useAos({});
+
   return (
-    <BaseWrapperLayout className="flex justify-between items-center sm:h-base90 h-base60">
+    <BaseWrapperLayout dataAos="fade-down" className="flex justify-between items-center sm:h-base90 h-base60">
       <div className="cursor-pointer" onClick={() => router.push("/")}>
         <BaseImage
           src={Logo}
@@ -106,7 +109,10 @@ export default function Header() {
                   className=" whitespace-nowrap text-textColorSecond font-medium"
                   tag="p"
                   size="XS"
-                  onClick={() => router.push(item.link)}
+                  onClick={() => {
+                    router.push(item.link);
+                    setShowDropdown(!showDropdown);
+                  }}
                 >
                   {item.title}
                 </BaseTextButton>
