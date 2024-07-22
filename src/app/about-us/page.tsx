@@ -8,8 +8,7 @@ import { IAboutUs } from "@/types/about-us";
 import { get } from "lodash-es";
 
 export default async function AboutUs() {
-  const contents: IAboutUs[] = (await getSettingAboutUs()).data;
-  const content = contents[4];
+  const contents: IAboutUs[] = (await getSettingAboutUs()).data ?? [];
 
   return (
     <div>
@@ -47,7 +46,7 @@ export default async function AboutUs() {
           }}
         ></div>
       </BaseWrapperLayout>
-      <LibraryImage data={content?.attributes.gallery?.data ?? []} />
+      <LibraryImage data={contents[4]?.attributes.gallery?.data ?? []} />
       <BaseWrapperLayout className="lg:mx-6 grid lg:grid-cols-2 grid-cols-1 gap-9 lg:pt-[80px] sm:pt-12 pt-8">
         <div className="flex flex-col sm:gap-8 gap-6">
           <BaseText className="!text-t-primary font-bold text-xl-2 tracking-tighter">
@@ -70,14 +69,6 @@ export default async function AboutUs() {
               __html: contents[3]?.attributes?.description ?? "",
             }}
           ></div>
-          {/* {ourTeam.map((item, index) => (
-            <div key={index}>
-              <BaseText
-                className="font-medium leading-[32px] text-l"
-                content={item}
-              ></BaseText>
-            </div>
-          ))} */}
         </div>
       </BaseWrapperLayout>
     </div>

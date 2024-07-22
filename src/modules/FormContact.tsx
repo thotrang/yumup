@@ -16,10 +16,11 @@ export default function FormContact() {
   } = formMethods;
   const onSubmit = async (data: any) => {
     console.log(data);
-    
-    const response = await fetch(apiUrl + "contacts", {
+    const formData = new FormData(data);
+
+    const response = await fetch(apiUrl + "forms", {
       method: "POST",
-      body: data,
+      body: formData,
     });
     console.log(response);
     if (response.ok) {

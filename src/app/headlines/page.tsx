@@ -1,17 +1,7 @@
-import { apiUrl } from "@/apis";
+import { getHeadlines } from "@/apis";
 import BaseWrapperLayout from "@/components/BaseWrapperLayout";
 import HeadlineCard from "@/components/headline/HeadlineCard";
 import { IHeadline } from "@/types/headline";
-
-const getHeadlines = async () => {
-  const res = await fetch(apiUrl + `headlines?populate=*`, {
-    cache: "no-cache",
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-};
 
 export default async function Headlines() {
   const headlines = await getHeadlines();
