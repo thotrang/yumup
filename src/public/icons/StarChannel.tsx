@@ -1,4 +1,4 @@
-const StartChannel = ({ ...props }: React.SVGProps<SVGSVGElement>) => {
+const StarChannel = ({ ...props }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="61"
@@ -23,4 +23,4 @@ const StartChannel = ({ ...props }: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default StartChannel;
+export default StarChannel;

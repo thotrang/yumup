@@ -17,6 +17,7 @@ export default function InfomationHeadlines({
   return (
     <BaseWrapperLayout isBackground className="py-4 max-sm:pt-0">
       <BaseText
+        data-aos="fade-down"
         tag="h1"
         className="text-t-primary font-bold text-[68px] text-center py-12 "
       >
