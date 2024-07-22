@@ -33,20 +33,14 @@ body {
   p {
     margin: 0;
   }
-
-  input ::placeholder {
-    color: red;
-  }
-
-  textarea:-moz-placeholder, /* Firefox 18- */
-  textarea::-moz-placeholder, /* Firefox 19+ */
-  textarea:-ms-input-placeholder, /* IE 10+ */
-  textarea::-webkit-input-placeholder, /* Webkit based */
-  textarea::placeholder {
-    /* Modern browsers */
-    color: red;
-  }
 }
 
 @layer utilities {
+  .placeholder-custom::placeholder {
+    color: #111113;
+    opacity: 0.5;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "SVN-Sofia Pro", sans-serif;
+  }
 }

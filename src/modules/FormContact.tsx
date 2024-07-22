@@ -5,6 +5,7 @@ import BaseButton from "@/components/BaseButton";
 import BaseInput from "@/components/BaseInput";
 import BaseText from "@/components/BaseText";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 export default function FormContact() {
   const formMethods = useForm();
@@ -15,16 +16,18 @@ export default function FormContact() {
     reset,
   } = formMethods;
   const onSubmit = async (data: any) => {
-    console.log(data);
-    const formData = new FormData(data);
-
     const response = await fetch(apiUrl + "forms", {
       method: "POST",
-      body: formData,
+      body: JSON.stringify({ data }),
+      headers: {
+        "content-type": "application/json",
+      },
     });
-    console.log(response);
     if (response.ok) {
       reset();
+      toast.success("Liên hệ thành công!");
+    } else {
+      toast.error("Liên hệ thất bại!");
     }
   };
   return (
@@ -32,9 +35,9 @@ export default function FormContact() {
       <form className="w-full grid grid-cols-2 gap-8">
         <div className="relative">
           <BaseInput
-            id="firstName"
+            id="firstname"
             register={{
-              ...register("firstName", {
+              ...register("firstname", {
                 required: "Vui lòng nhập tên của bạn",
               }),
             }}
@@ -49,9 +52,9 @@ export default function FormContact() {
         </div>
         <div className="relative">
           <BaseInput
-            id="lastName"
+            id="lastname"
             register={{
-              ...register("lastName", {
+              ...register("lastname", {
                 required: "Vui lòng nhập tên của bạn",
               }),
             }}
@@ -79,7 +82,7 @@ export default function FormContact() {
             id="phone"
             register={{
               ...register("phone", {
-                required: "Vui lòng nhập tên của bạn",
+                required: "Vui lòng nhập số điện thoại của bạn",
               }),
             }}
             placeholder="Phone"
@@ -96,11 +99,18 @@ export default function FormContact() {
           <BaseInput
             id="message"
             register={{
-              ...register("message"),
+              ...register("message", {
+                required: "Vui lòng nhập tin nhắn của bạn",
+              }),
             }}
             type="textarea"
             placeholder="Message"
           ></BaseInput>
+          {errors.phone && (
+            <BaseText className="absolute !text-error text-xs pt-1">
+              {(errors.phone as any).message}
+            </BaseText>
+          )}
         </div>
         <div className="col-span-2">
           <BaseButton className="w-full" onClick={handleSubmit(onSubmit)}>
