@@ -44,7 +44,7 @@ export default function ChannelCard({ item }: { item: IChannel }) {
             content={item.attributes.name}
           />
           <BaseText
-            className="!text-xm font-normal text-t-shadow line-clamp-3"
+            className="leading-[24px] font-normal !text-t-shadow line-clamp-3 text-xm"
             content={item.attributes.shortDescription}
           />
         </div>

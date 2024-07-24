@@ -21,10 +21,10 @@ export default function InfomationOurChannel({
             Our Channel
           </BaseText>
           <div data-aos="fade-up">
-            <StarChannel className="h-[156px] w-auto" />
+            <StarChannel className=" sm:h-[156px] h-[120px] w-auto" />
           </div>
         </div>
-        <div className="grid lg:grid-cols-12 grid-cols-3 lg:gap-base80 gap-8 text-t-primary sm:py-12 py-6 content-center ">
+        <div className="grid lg:grid-cols-12 grid-cols-3 lg:gap-base80 gap-8 text-t-primary 2xl:py-12 sm:py-8 py-6 content-center ">
           <BaseText
             data-aos="fade-right"
             className="text-xl-2 leading-[48px] font-bold lg:col-span-5 sm:col-span-2 col-span-3 tracking-[-1px]"

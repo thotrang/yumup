@@ -2,7 +2,7 @@ import BaseText from "../BaseText";
 
 export default function OpeningStatement() {
   return (
-    <div className="font-bold lg:text-3xl lg:leading-[56px] text-l leading-[32px] text-center">
+    <div className="font-bold 2xl:text-3xl 2xl:leading-[56px] lg:text-2xl lg:leading-[50px] text-l leading-[32px] text-center">
       <BaseText>Welcome to YumUp!</BaseText>
       <BaseText>
         We are a digital content production company delivering entertainment

@@ -35,7 +35,7 @@ export default function BaseButtonViewmore({
       }
       whileTap={!disabled ? { scale: 0.95, opacity: 0.3 } : {}}
       className={twMerge(
-        "bg-white border-2 font-medium text-l border-solid border-b_primary rounded-full py-5 px-10 text-primary"
+        "bg-white border-2 font-medium border-solid border-b_primary rounded-full py-5 px-10 text-primary text-l"
       )}
         onClick={onClick}
       {...props}

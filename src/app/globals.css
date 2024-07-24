@@ -11,6 +11,7 @@ body {
   p {
     margin: 0;
   }
+  color: #2e2f35;
 }
 
 @layer utilities {

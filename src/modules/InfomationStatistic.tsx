@@ -33,8 +33,8 @@ function GrirdInfo({ item, dataAos }: any) {
           className={twMerge(
             "font-black",
             color,
-            !isFullSize && "xl:text-5xl sm:text-xl-2 text-xl",
-            isFullSize && "xl:text-max-3 sm:text-max-2 text-max"
+            !isFullSize && "xl:text-5xl lg:text-3xl sm:text-xl-2 text-xl",
+            isFullSize && "xl:text-max-3 lg:text-max-2 text-max"
           )}
         >
           {description}
@@ -44,7 +44,7 @@ function GrirdInfo({ item, dataAos }: any) {
             "font-medium",
             color,
             !isFullSize && "xl:text-xl-2 text-m sm:text-xm",
-            isFullSize && "font-black sm:text-2xl text-l"
+            isFullSize && "font-black xl:text-2xl sm:text-xl text-l px-2"
           )}
         >
           {title}
@@ -95,20 +95,20 @@ export default function InfomationStatistic({
   useAos({});
 
   return (
-    <BaseWrapperLayout className="lg:py-base110 sm:py-16 py-12" isBackground>
+    <BaseWrapperLayout className="2xl:py-base110 lg:py-base90 sm:py-16 py-12" isBackground>
       <OpeningStatement />
       <div
         className={twJoin(
-          "grid sm:grid-cols-3 max-sm:grid-rows-3 xl:gap-base106 sm:gap-base60 gap-6 ",
-          "lg:pt-base80 pt-12 text-center"
+          "grid sm:grid-cols-3 max-sm:grid-rows-3 2xl:gap-base106 sm:gap-base60 gap-6 ",
+          "2xl:pt-base80 lg:pt-base60 pt-12 text-center"
         )}
       >
         <GrirdInfo dataAos={"fade-right"} item={listInfo[0]} />
-        <div className="grid sm:grid-rows-2 max-sm:grid-cols-2 xl:gap-12 sm:gap-7 gap-6">
+        <div className="grid sm:grid-rows-2 max-sm:grid-cols-2 2xl:gap-12 sm:gap-7 gap-6">
           <GrirdInfo dataAos={"fade-up"} item={listInfo[1]} />
           <GrirdInfo dataAos={"fade-up"} item={listInfo[2]} />
         </div>
-        <div className="grid sm:grid-rows-2 max-sm:grid-cols-2 xl:gap-12 sm:gap-7 gap-6">
+        <div className="grid sm:grid-rows-2 max-sm:grid-cols-2 2xl:gap-12 sm:gap-7 gap-6">
           <GrirdInfo dataAos={"fade-up"} item={listInfo[3]} />
           <GrirdInfo dataAos={"fade-up"} item={listInfo[4]} />
         </div>

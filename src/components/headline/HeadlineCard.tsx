@@ -12,7 +12,7 @@ export default function HeadlineCard({ headline }: { headline: IHeadline }) {
         className="w-full h-[320px] rounded-2xl overflow-hidden object-cover"
       />
       <BaseText
-        className="text-m text-gray-950 font-bold line-clamp-2"
+        className="text-l font-bold line-clamp-2"
         content={headline.attributes.title}
       ></BaseText>
     </div>

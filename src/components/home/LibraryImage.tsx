@@ -57,28 +57,30 @@ export default function LibraryImage({ data }: { data: IThumbnail[] }) {
       </div>
     );
   return (
-    <div className="w-full h-[727px] grid grid-cols-5 gap-6">
-      <div className="grid h-full grid-rows-5 gap-6">
-        <GridColItem value={data[0]} row="row-span-2" />
-        <GridColItem value={data[1]} row="row-span-3" />
-      </div>
-      <div className="grid h-full grid-rows-7 gap-6">
-        <GridColItem value={data[2]} row="row-span-2" />
-        <GridColItem value={data[3]} row="row-span-4" />
-        <GridColItem value={data[4]} row="row-span-1" />
-      </div>
-      <div className="grid h-full grid-rows-5 gap-6">
-        <GridColItem value={data[5]} row="row-span-2" />
-        <GridColItem value={data[6]} row="row-span-3" />
-      </div>
-      <div className="grid h-full grid-rows-7 gap-6">
-        <GridColItem value={data[7]} row="row-span-2" />
-        <GridColItem value={data[8]} row="row-span-4" />
-        <GridColItem value={data[9]} row="row-span-1" />
-      </div>
-      <div className="grid h-full grid-rows-5 gap-6">
-        <GridColItem value={data[10]} row="row-span-2" />
-        <GridColItem value={data[11]} row="row-span-3" />
+    <div className="px-6">
+      <div className="w-full h-[727px] grid grid-cols-5 gap-6">
+        <div className="grid h-full grid-rows-5 gap-6">
+          <GridColItem value={data[0]} row="row-span-2" />
+          <GridColItem value={data[1]} row="row-span-3" />
+        </div>
+        <div className="grid h-full grid-rows-7 gap-6">
+          <GridColItem value={data[2]} row="row-span-2" />
+          <GridColItem value={data[3]} row="row-span-4" />
+          <GridColItem value={data[4]} row="row-span-1" />
+        </div>
+        <div className="grid h-full grid-rows-5 gap-6">
+          <GridColItem value={data[5]} row="row-span-2" />
+          <GridColItem value={data[6]} row="row-span-3" />
+        </div>
+        <div className="grid h-full grid-rows-7 gap-6">
+          <GridColItem value={data[7]} row="row-span-2" />
+          <GridColItem value={data[8]} row="row-span-4" />
+          <GridColItem value={data[9]} row="row-span-1" />
+        </div>
+        <div className="grid h-full grid-rows-5 gap-6">
+          <GridColItem value={data[10]} row="row-span-2" />
+          <GridColItem value={data[11]} row="row-span-3" />
+        </div>
       </div>
     </div>
   );

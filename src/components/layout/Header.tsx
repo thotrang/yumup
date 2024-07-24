@@ -2,7 +2,7 @@
 
 import { ERouter } from "@/types/navigate";
 import BaseImage from "@/components/BaseImage";
-import Logo from "@/public/images/logo.png";
+import Logo from "@/public/icons/Logo.svg";
 import BaseTextButton from "../BaseTextButton";
 import { usePathname, useRouter } from "next/navigation";
 import BaseWrapperLayout from "../BaseWrapperLayout";
@@ -11,7 +11,7 @@ import BaseAction from "../BaseAction";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import useOutSideClick from "@/hooks/useOutSideClick";
-import { twJoin, twMerge } from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 import useAos from "@/hooks/useAos";
 
 export default function Header() {
@@ -56,7 +56,7 @@ export default function Header() {
   return (
     <BaseWrapperLayout
       dataAos="fade-down"
-      className="flex justify-between items-center sm:h-base90 h-base60"
+      className="flex justify-between items-center 2xl:h-base90 sm:h-base70 h-base60"
     >
       <div className="cursor-pointer" onClick={() => router.push("/")}>
         <BaseImage
@@ -74,8 +74,8 @@ export default function Header() {
               }}
               key={index}
               tag="span"
-              className={twJoin(
-                "!text-l font-semibold",
+              className={twMerge(
+                "text-l max-2xl:text-xm font-semibold",
                 item.link === pathname && "text-t-primary"
               )}
             >
