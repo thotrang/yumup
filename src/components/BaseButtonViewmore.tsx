@@ -2,7 +2,6 @@
 
 import { PropsWithChildren } from "react";
 import { motion } from "framer-motion";
-import { twMerge } from "tailwind-merge";
 
 export interface IBaseButton extends PropsWithChildren {
   className?: string;
