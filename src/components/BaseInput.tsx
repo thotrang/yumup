@@ -27,7 +27,7 @@ export default function BaseInput({
         <input
           className={twJoin(
             "py-3 px-4 text-m w-[-webkit-fill-available]",
-            "border border-solid border-[#111113]/20 rounded-md placeholder-custom"
+            "border border-solid border-[#111113]/20 rounded-md placeholder-custom bg-white"
           )}
           value={value}
           type={typeInput}
@@ -39,7 +39,7 @@ export default function BaseInput({
       ) : (
         <textarea
           className={twJoin(
-            "py-3 px-4 !text-m w-[-webkit-fill-available] h-[60px] placeholder-custom",
+            "py-3 px-4 !text-m w-[-webkit-fill-available] h-[60px] placeholder-custom bg-white",
             "border border-solid border-[#111113]/20 rounded-md"
           )}
           value={value}

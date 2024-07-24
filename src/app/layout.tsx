@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { twJoin } from "tailwind-merge";
 
 const myFont = localFont({
   src: [
@@ -33,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={myFont.className}>
+    <html lang="en" className={twJoin(myFont.className)}>
       <body className="min-w-[375px]">
         <div>
           <Header />
