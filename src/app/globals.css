@@ -2,31 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "SVN-Sofia Pro";
-  src: url("/fonts/Sofia Pro/SVN-Sofia Pro Black Italic.otf") format("otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SVN-Sofia Pro";
-  src: url("/fonts/sofia-pro/Sofia Pro Bold Az.otf") format("otf");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SVN-Sofia Pro";
-  src: url("/fonts/sofia-pro/Sofia Pro Medium Az.otf") format("otf");
-  font-weight: medium;
-  font-style: normal;
-}
-
 body {
   padding: 0px;
   margin: 0px;
-  font-family: "SVN-Sofia Pro", sans-serif;
   max-width: 1920px;
   margin: 0 auto;
   background-color: white;

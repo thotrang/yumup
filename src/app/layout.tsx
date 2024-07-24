@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
-// import { Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import "aos/dist/aos.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-// const manrope = Manrope({
-//   variable: "--font-title",
-//   subsets: ["latin"],
-//   display: "swap",
-//   weight: "400",
-// });
+import "react-toastify/dist/ReactToastify.css";
+
+const myFont = localFont({
+  src: [
+    {
+      path: "../../public/fonts/sofia-pro/SVN-Sofia Pro Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/sofia-pro/SVN-Sofia Pro Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={myFont.className}>
       <body className="min-w-[375px]">
         <div>
           <Header />
