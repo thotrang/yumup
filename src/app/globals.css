@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  overflow-x: hidden !important;
   padding: 0px;
   margin: 0px;
   max-width: 1920px;
