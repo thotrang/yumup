@@ -75,8 +75,8 @@ export default function Header() {
               key={index}
               tag="span"
               className={twMerge(
-                "text-l max-2xl:text-xm font-semibold",
-                item.link === pathname && "text-t-primary"
+                item.link === pathname && "text-t-primary",
+                "text-l max-2xl:text-xm font-semibold"
               )}
             >
               {item.title}
