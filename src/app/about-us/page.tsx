@@ -9,10 +9,12 @@ import { get } from "lodash-es";
 
 export default async function AboutUs() {
   const contents: IAboutUs[] = (await getSettingAboutUs()).data ?? [];
-
+  console.log(contents[0]?.attributes.background);
+  
   return (
     <div>
       <div className="relative">
+        {/* background */}
         <BaseImage
           src={get(
             contents[0],
@@ -23,6 +25,7 @@ export default async function AboutUs() {
           className="w-full h-auto absolute z-[-10]"
         />
         <div className="w-full aspect-[834/378]"></div>
+        {/* opening statement */}
         <div className="bg-white lg:mx-base80 sm:mx-8 mx-4 ">
           <BaseWrapperLayout
             isBackground
@@ -32,6 +35,7 @@ export default async function AboutUs() {
           </BaseWrapperLayout>
         </div>
       </div>
+      {/* job */}
       <BaseWrapperLayout className="lg:mx-6 py-12 flex flex-col sm:gap-8 gap-6">
         <BaseText
           className="font-bold text-xl-2 leading-[48px] tracking-tighter text-t-primary"
@@ -46,8 +50,10 @@ export default async function AboutUs() {
           }}
         ></div>
       </BaseWrapperLayout>
+      {/* library */}
       <LibraryImage data={contents[4]?.attributes.gallery?.data ?? []} />
       <BaseWrapperLayout className="lg:mx-6 grid lg:grid-cols-2 grid-cols-1 gap-9 lg:pt-[80px] sm:pt-12 pt-8 pb-12">
+      {/* history */}
         <div className="flex flex-col sm:gap-8 gap-6">
           <BaseText className="!text-t-primary font-bold text-xl-2 tracking-tighter">
             {contents[2]?.attributes?.title}
@@ -59,6 +65,7 @@ export default async function AboutUs() {
             }}
           ></div>
         </div>
+        {/* our team */}
         <div className="flex flex-col sm:gap-8 gap-6">
           <BaseText className="!text-t-primary font-bold text-xl-2 tracking-tighter">
             {contents[3]?.attributes?.title}
