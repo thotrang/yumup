@@ -54,7 +54,10 @@ export default function Header() {
   useAos({});
 
   return (
-    <BaseWrapperLayout dataAos="fade-down" className="flex justify-between items-center sm:h-base90 h-base60">
+    <BaseWrapperLayout
+      dataAos="fade-down"
+      className="flex justify-between items-center sm:h-base90 h-base60"
+    >
       <div className="cursor-pointer" onClick={() => router.push("/")}>
         <BaseImage
           src={Logo}
@@ -106,7 +109,7 @@ export default function Header() {
                 className="border-0 border-solid border-borderColor border-b w-[200px] p-4 last:border-b-0"
               >
                 <BaseTextButton
-                  className=" whitespace-nowrap text-textColorSecond font-medium"
+                  className="whitespace-nowrap text-textColorSecond font-medium"
                   tag="p"
                   size="XS"
                   onClick={() => {

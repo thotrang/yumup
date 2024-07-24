@@ -29,7 +29,7 @@ body {
   font-family: "SVN-Sofia Pro", sans-serif;
   max-width: 1920px;
   margin: 0 auto;
-
+  background-color: white;
   p {
     margin: 0;
   }

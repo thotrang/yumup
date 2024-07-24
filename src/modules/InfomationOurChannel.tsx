@@ -30,7 +30,7 @@ export default function InfomationOurChannel({
             className="text-xl-2 leading-[48px] font-bold lg:col-span-5 sm:col-span-2 col-span-3 tracking-[-1px]"
             content="YumUp's content channels offer everything you crave!"
           ></BaseText>
-          <div className="text-l leading-6 font-normal lg:col-span-7 col-span-3 flex items-center">
+          <div className="text-l leading-8 font-normal lg:col-span-7 col-span-3 flex items-center">
             <BaseText
               data-aos="fade-left"
               className="text-t-primary"
