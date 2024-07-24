@@ -27,17 +27,17 @@ export default function BaseButtonViewmore({
           ? {
               scale: 1.03,
               opacity: 0.9,
-              backgroundColor: "#EC273A",
+              backgroundColor: "#EC273A" ,
               color: "white",
               transition: { duration: 0.2 },
             }
           : {}
       }
       whileTap={!disabled ? { scale: 0.95, opacity: 0.3 } : {}}
-      className={twMerge(
-        "bg-white border-2 font-medium border-solid border-b_primary rounded-full py-5 px-10 text-primary text-l"
-      )}
-        onClick={onClick}
+      className={
+        "bg-white border-2 font-medium border-solid border-b_primary rounded-full py-5 px-10 text-l text-primary cursor-pointer"
+      }
+      onClick={onClick}
       {...props}
     >
       View more
