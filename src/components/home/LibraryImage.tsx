@@ -37,10 +37,9 @@ function GridColItem({
   );
 }
 export default function LibraryImage({ data }: { data: IThumbnail[] }) {
-  const { width } = useWindowSize();
-  if (width < 640)
-    return (
-      <div className="h-[500px] grid grid-cols-3 gap-1">
+  return (
+    <div className="sm:px-6">
+      <div className="h-[500px] max-sm:grid hidden grid-cols-3 gap-1">
         {data?.map((item, index) => (
           <div className="relative overflow-hidden" key={index}>
             <BaseVideo
@@ -55,10 +54,7 @@ export default function LibraryImage({ data }: { data: IThumbnail[] }) {
           </div>
         ))}
       </div>
-    );
-  return (
-    <div className="px-6">
-      <div className="w-full h-[727px] grid grid-cols-5 gap-6">
+      <div className="w-full sm:h-[727px] sm:grid hidden grid-cols-5 gap-6">
         <div className="grid h-full grid-rows-5 gap-6">
           <GridColItem value={data[0]} row="row-span-2" />
           <GridColItem value={data[1]} row="row-span-3" />

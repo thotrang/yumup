@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, VideoHTMLAttributes } from "react";
+import { DetailedHTMLProps, useEffect, VideoHTMLAttributes } from "react";
 import { twJoin } from "tailwind-merge";
 
 interface IBasseVideoProps
@@ -23,6 +23,7 @@ export default function BaseVideo({
       preload="none"
       className={twJoin(className, "block")}
       playsInline
+      webkit-playsinline
       {...prop}
     >
       <source src={src} type="video/mp4" />
