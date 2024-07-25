@@ -12,7 +12,6 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import useOutSideClick from "@/hooks/useOutSideClick";
 import { twMerge } from "tailwind-merge";
-import useAos from "@/hooks/useAos";
 
 export default function Header() {
   const itemRoutes = [
@@ -51,8 +50,6 @@ export default function Header() {
     },
   };
 
-  useAos({});
-
   return (
     <BaseWrapperLayout
       // dataAos="fade-down"
@@ -90,7 +87,7 @@ export default function Header() {
             setShowDropdown(!showDropdown);
           }}
         >
-          <Menu className="h-10 w-10" />
+          <Menu className="h-9 w-9" />
         </BaseAction>
       </div>
       <motion.div
@@ -115,7 +112,7 @@ export default function Header() {
                   size="XS"
                   onClick={() => {
                     router.push(item.link);
-                    setShowDropdown(!showDropdown);
+                    setShowDropdown(false);
                   }}
                 >
                   {item.title}
