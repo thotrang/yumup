@@ -84,14 +84,15 @@ export default function Header() {
           );
         })}
       </div>
-      <BaseAction
-        className="lg:hidden block"
-        onClick={() => {
-          setShowDropdown(!showDropdown);
-        }}
-      >
-        <Menu className="h-10 w-10"/>
-      </BaseAction>
+      <div ref={menuRef} className="lg:hidden block">
+        <BaseAction
+          onClick={() => {
+            setShowDropdown(!showDropdown);
+          }}
+        >
+          <Menu className="h-10 w-10" />
+        </BaseAction>
+      </div>
       <motion.div
         className={twMerge(
           "absolute top-base80 sm:right-8 right-6",
