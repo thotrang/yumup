@@ -55,7 +55,7 @@ export default function Header() {
 
   return (
     <BaseWrapperLayout
-      dataAos="fade-down"
+      // dataAos="fade-down"
       className="flex justify-between items-center 2xl:h-base90 sm:h-base70 h-base60"
     >
       <div className="cursor-pointer" onClick={() => router.push("/")}>
@@ -90,23 +90,23 @@ export default function Header() {
           setShowDropdown(!showDropdown);
         }}
       >
-        <Menu />
+        <Menu className="h-10 w-10"/>
       </BaseAction>
       <motion.div
         className={twMerge(
           "absolute top-base80 sm:right-8 right-6",
-          "border border-solid border-borderColor rounded-lg z-50 bg-white overflow-hidden"
+          "border border-solid border-black/50 rounded-lg z-50 bg-white overflow-hidden"
         )}
         initial="exit"
         animate={showDropdown ? "enter" : "exit"}
         variants={subMenuAnimate}
       >
-        <div className="bg-gradient-to-r from-primary/70 to-primary/20">
+        <div className="bg-white">
           {itemRoutes.map((item, index) => {
             return (
               <div
                 key={index}
-                className="border-0 border-solid border-borderColor border-b w-[200px] p-4 last:border-b-0"
+                className="border-0 border-solid border-black/50 border-b w-[200px] px-4 py-6 last:border-b-0"
               >
                 <BaseTextButton
                   className="whitespace-nowrap text-textColorSecond font-medium"
