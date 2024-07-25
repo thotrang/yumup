@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, useEffect, VideoHTMLAttributes } from "react";
+import { DetailedHTMLProps, VideoHTMLAttributes } from "react";
 import { twJoin } from "tailwind-merge";
 
 interface IBasseVideoProps

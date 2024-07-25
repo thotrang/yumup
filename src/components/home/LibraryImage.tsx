@@ -1,7 +1,6 @@
 "use client";
 
 import { twJoin } from "tailwind-merge";
-import { useWindowSize } from "@/hooks/useWindowSize";
 import { IThumbnail } from "@/types";
 import BaseVideo from "../BaseVideo";
 function GridColItem({
