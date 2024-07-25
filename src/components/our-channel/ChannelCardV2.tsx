@@ -32,6 +32,7 @@ export default function ChannelCardV2({ item }: { item: IChannel }) {
             muted
             loop
             src={video}
+            controls={true}
             link={item.attributes.link ?? ""}
           />
         )}

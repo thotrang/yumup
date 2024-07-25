@@ -12,14 +12,12 @@ export default function BaseVideo({
   className = "",
   src,
   link,
-  controls = true,
   ...prop
 }: IBasseVideoProps) {
   return (
     <video
       width="0"
       height="0"
-      controls={controls}
       preload="none"
       className={twJoin(className, 'block')}
       {...prop}
