@@ -18,7 +18,7 @@ export default async function HomeSection({ section }: { section: ISection }) {
       if (isImg) return <BaseImage alt={""} src={url} />;
       return (
         <BaseVideo
-          className="w-full aspect-video h-auto"
+          className="w-full aspect-video h-auto disable-controls"
           autoPlay
           muted
           loop

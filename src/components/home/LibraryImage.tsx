@@ -27,7 +27,7 @@ function GridColItem({
       <BaseVideo
         src={value?.attributes?.url}
         poster={value?.attributes?.url}
-        className="h-full w-full object-cover absolute"
+        className="h-full w-full object-cover absolute disable-controls"
         controls={false}
         autoPlay={true}
         loop={true}
