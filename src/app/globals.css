@@ -25,14 +25,4 @@ html {
     font-weight: 400;
     font-family: "SVN-Sofia Pro", sans-serif;
   }
-
-  .disable-controls::-webkit-media-controls {
-    display: none !important;
-  }
-  .disable-controls::-webkit-media-controls-enclosure {
-    display: none !important;
-  }
-  .disable-controls::-webkit-media-controls-panel {
-    display: none !important;
-  }
 }

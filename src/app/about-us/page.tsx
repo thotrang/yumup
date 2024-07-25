@@ -9,8 +9,6 @@ import { get } from "lodash-es";
 
 export default async function AboutUs() {
   const contents: IAboutUs[] = (await getSettingAboutUs()).data ?? [];
-  console.log(contents[0]?.attributes.background);
-  
   return (
     <div>
       <div className="relative">

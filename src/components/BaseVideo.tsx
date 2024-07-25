@@ -25,10 +25,8 @@ export default function BaseVideo({
 
   useEffect(() => {
     const videoElement = ref.current;
-    if (videoElement) {
-      // Remove controls attribute to ensure controls are hidden
+    if (videoElement && controls === false) {
       videoElement.removeAttribute("controls");
-      // Optionally set controls property to false
       videoElement.controls = false;
     }
   }, [controls]);
