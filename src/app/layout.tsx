@@ -33,6 +33,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en" className={twJoin(myFont.className)}>
       <body className="min-w-[375px]">
