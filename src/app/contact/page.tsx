@@ -6,7 +6,7 @@ export default function Contact() {
   return (
       <BaseWrapperLayout
         isBackground
-        className="lg:pt-base60 sm:pt-12 pt-6 pb-base70 gap-8 h-[-webkit-fill-available] min-h-[calc(100vh-380px)]"
+        className="lg:pt-base60 sm:pt-12 pt-6 pb-base70 gap-8 lg:min-h-[calc(100vh-380px)]"
       >
         <div className="lg:min-w-[30%] lg:w-fit lg:inline-block lg:pr-12 w-full ">
           <BaseText
