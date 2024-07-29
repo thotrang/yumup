@@ -11,7 +11,7 @@ export default function LibraryImage({ data }: { data: IThumbnail[] }) {
   const deviceType = useDeviceType();
   if (deviceType === null) return null;
   return (
-    <div className="sm:px-6">
+    <div>
       {deviceType === "mobile" ? (
         <ListItem data={data} />
       ) : (

@@ -11,7 +11,7 @@ export default function BaseWrapperLayout({
     <div
       data-aos={dataAos}
       className={twMerge(
-        "lg:px-base80 sm:px-8 px-4",
+        "lg:px-base80 sm:px-8 px-4 max-w-[1920px] mx-auto",
         isBackground && "bg-gradient-to-r from-primary/70 to-primary/20",
         className
       )}
