@@ -83,7 +83,7 @@ function GridColItem({
 }
 function ListGridCol({ data }: { data: IThumbnail[] }) {
   return (
-    <div className="w-full sm:h-[727px] grid grid-cols-5 gap-6">
+    <div className="w-full 4xl:h-[1200px] 3xl:h-[1000px] 2xl:h-[900px] sm:h-[727px] grid grid-cols-5 gap-6">
       <div className="grid h-full grid-rows-5 gap-6">
         <GridColItem value={data[0]} row="row-span-2" />
         <GridColItem value={data[1]} row="row-span-3" />

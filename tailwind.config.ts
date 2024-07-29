@@ -81,6 +81,10 @@ export const theme = {
     boxShadow: {
       action: "inset 0px 0px 12px -4px #FFFFFF",
     },
+    screens: {
+      "3xl": "1920px",
+      "4xl": "2560px",
+    }
   },
 };
 
