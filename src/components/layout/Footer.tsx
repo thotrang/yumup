@@ -2,7 +2,7 @@
 
 import { ERouter } from "@/types/navigate";
 import BaseImage from "../BaseImage";
-import Logo from "@/public/images/logo.png";
+import Logo from "@/public/icons/Logo.svg";
 import BaseTextButton from "../BaseTextButton";
 import Mail from "@/public/icons/Mail";
 import Phone from "@/public/icons/Phone";
