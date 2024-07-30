@@ -17,7 +17,7 @@ export default function ChannelCardV2({ item }: { item: IChannel }) {
     get(item, "attributes.thumbnail.data.attributes.ext", "")
   );
   return (
-    <div className="bg-white overflow-hidden rounded-lg">
+    <div className="bg-white overflow-hidden rounded-lg h-fit">
       <div>
         {isImg ? (
           <BaseImage

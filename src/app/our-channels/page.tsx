@@ -11,7 +11,7 @@ export default async function OurChannels() {
   return (
     <BaseWrapperLayout
       isBackground
-      className="lg:py-16 sm:py-8 py-6 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8"
+      className="lg:py-16 sm:py-8 py-6 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 lg:min-h-[calc(100vh-400px)]"
     >
       {channels?.data?.map((item: IChannel, index: number) => {
         return <ChannelCardV2 item={item} key={index} />;

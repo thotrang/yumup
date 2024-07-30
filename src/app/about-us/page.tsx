@@ -24,13 +24,15 @@ export default async function AboutUs() {
         />
         <div className="w-full aspect-[834/378]"></div>
         {/* opening statement */}
-        <BaseWrapperLayout
-          isBackground
-          className="font-bold sm:py-12 py-8 text-center relative"
-        >
-          <OpeningStatement />
+        <div className="relative lg:mx-20 sm:mx-8 mx-4">
+          <BaseWrapperLayout
+            isBackground
+            className="font-bold sm:py-12 py-8 text-center"
+          >
+            <OpeningStatement />
+          </BaseWrapperLayout>
           <div className="w-full h-full bg-white absolute top-0 z-[-1] left-0"></div>
-        </BaseWrapperLayout>
+        </div>
       </div>
       {/* job */}
       <BaseWrapperLayout>
