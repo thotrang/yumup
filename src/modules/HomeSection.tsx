@@ -6,16 +6,18 @@ import { ISection } from "@/types";
 import { getChannels, getHeadlines } from "@/apis";
 import get from "lodash-es/get";
 import BaseVideo from "@/components/BaseVideo";
+import { isImageOrVideo } from "@/helpers";
 
 export default async function HomeSection({ section }: { section: ISection }) {
   switch (section.attributes.section) {
     case "banner": {
       const url = get(section, "attributes.background.data.attributes.url", "");
 
-      const isImg = [".jpg", ".png", ".jpng"].includes(
-        get(section, "attributes.background.data.attributes.ext", "")
-      );
-      if (isImg) return <BaseImage alt={""} src={url} />;
+      const isVideo =
+        isImageOrVideo(
+          get(section, "attributes.background.data.attributes.ext", "")
+        ) === "video";
+      if (!isVideo) return <BaseImage alt={""} src={url} />;
       return (
         <BaseVideo
           className="w-full aspect-video h-auto disable-controls"

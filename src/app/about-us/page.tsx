@@ -1,27 +1,45 @@
 import { getSettingAboutUs } from "@/apis";
 import BaseImage from "@/components/BaseImage";
 import BaseText from "@/components/BaseText";
+import BaseVideo from "@/components/BaseVideo";
 import BaseWrapperLayout from "@/components/BaseWrapperLayout";
 import LibraryImage from "@/components/home/LibraryImage";
 import OpeningStatement from "@/components/home/OpeningStatement";
+import { isImageOrVideo } from "@/helpers";
 import { IAboutUs } from "@/types/about-us";
 import { get } from "lodash-es";
 
 export default async function AboutUs() {
   const contents: IAboutUs[] = (await getSettingAboutUs()).data ?? [];
+  const isVideo =
+    isImageOrVideo(
+      get(contents[0], "attributes.background.data.attributes.ext", "")
+    ) === "video";
+  const url = get(
+    contents[0],
+    "attributes.background.data.attributes.url",
+    ""
+  );
   return (
     <div>
       <div className="relative">
         {/* background */}
-        <BaseImage
-          src={get(
-            contents[0],
-            "attributes.background.data.attributes.formats.large.url",
-            ""
-          )}
-          alt={""}
-          className="w-full h-auto absolute z-[-10]"
-        />
+        {isVideo ? (
+          <BaseVideo
+            className="w-full h-auto absolute z-[-10] disable-controls"
+            autoPlay
+            muted
+            loop
+            controls={false}
+            src={url}
+          ></BaseVideo>
+        ) : (
+          <BaseImage
+            src={url}
+            alt={""}
+            className="w-full h-auto absolute z-[-10]"
+          />
+        )}
         <div className="w-full aspect-[834/378]"></div>
         {/* opening statement */}
         <div className="relative lg:mx-20 sm:mx-8 mx-4">
