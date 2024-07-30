@@ -3,7 +3,7 @@ export const apiUrl = 'https://yumup-api.onrender.com/api/';
 // export const apiUrl = 'http://localhost:1337/api/';
 
 // export const request = { next: { revalidate: 3600 } }
-export const request: RequestInit = { cache: 'force-cache' }
+export const request: RequestInit = { cache: 'no-cache' }
 export const getChannels = async () => {
     const res = await fetch(apiUrl + `channels?populate=*`, request);
     if (!res.ok) return [];
