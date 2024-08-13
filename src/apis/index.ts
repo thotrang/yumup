@@ -1,5 +1,5 @@
 
-export const apiUrl = 'https://yumup-api.onrender.com/api/';
+export const apiUrl = 'https://yumup-api-8xug.onrender.com/api/';
 // export const apiUrl = 'http://localhost:1337/api/';
 
 // export const request = { next: { revalidate: 3600 } }
